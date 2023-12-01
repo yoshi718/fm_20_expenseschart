@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+:root {
+  --clr-mainText: #fff;
+  --clr-softRed: rgb(237, 118, 94);
+  --clr-cyan: rgb(117, 182, 189);
+
+  --clr-darkBrown: rgb(56, 35, 20);
+  --clr-mediumBrown: rgb(148, 134, 122);
+  --clr-cream: #f7e9de;
+  --clr-veryPaleOrange: rgb(255, 250, 245);
+
+  --verticalBarWidth: 2em;
+}
+
+body {
+  background-color: var(--clr-cream);
+  padding: 2rem 0;
+  display: flex;
+}
+
+.container {
+  padding: 0 0.5rem;
+  margin: 0 auto;
+  max-width: 33.75rem;
+  flex: 1 0 20rem;
+}
+
+/* Top section with the balance */
+
+.balance {
+  height: 7.8125rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  border-radius: 1rem;
+  color: var(--clr-mainText);
+  background-color: var(--clr-softRed);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance__myBalance-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.balance__myBalance-amount {
+  font-size: 2rem;
+}
+
+/* Graph Section */
+
+.spending {
+  margin: 1rem auto 0;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.heading {
+  margin: 0 0 2rem;
+}
+
+.graph {
+  font-size: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--clr-cream);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.graph .dailyAmt {
+  padding: 0.3em 0.4em;
+  border-radius: 0.2em;
+  margin-bottom: 0.25em;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.65em;
+  opacity: 0;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day:hover {
+  cursor: pointer;
+}
+
+.day:hover > .dailyAmt {
+  opacity: 1;
+}
+
+.day:hover > .verticalBar {
+  background-color: var(--clr-cyan);
+}
+
+.day .verticalBar {
+  background-color: var(--clr-softRed);
+  border-radius: 0.15em;
+  width: var(--verticalBarWidth);
+}
+
+.day .dayOfWeek {
+  text-transform: lowercase;
+  font-size: 0.75em;
+}
+
+/* ************** */
+
+.current {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.difference {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--clr-mediumBrown);
+}
+
+.difference .description {
+  margin-bottom: 0.25rem;
+}
+
+.total {
+  font-size: 2rem;
+  color: var(--clr-darkBrown);
+  font-weight: 700;
+}
+
+.percentage {
+  color: var(--clr-darkBrown);
+  font-weight: 700;
+}
+
+/**************************** MEDIA QUERIES */
+
+@media (max-width: 440px) {
+  .graph {
+    font-size: 1rem;
+  }
+}
